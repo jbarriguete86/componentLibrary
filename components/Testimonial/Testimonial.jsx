@@ -9,7 +9,7 @@ export default function Testimonial({children, variant}){
 
     return (
         <TestimonialContext.Provider value={{variant}}>
-        <div className="testimonial-container">
+        <div className={`testimonial-container ${variant === "picture" && "container-picture"}`}>
                 {variant=== "logo" && <img className="testimonialLogo-bckg" src="../../images/dotPattern.png" alt="background pattern"/>}
                 {children}
 

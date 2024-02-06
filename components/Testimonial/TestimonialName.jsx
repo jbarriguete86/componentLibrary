@@ -7,8 +7,8 @@ export default function TestimonialName({children}){
      
     return (
         <p className="testimonialName">
-        {children}
-        {variant !== "picture" && (<span>/</span>)}
+        {children} 
+        {variant !== "picture" && (<span>/</span> )} 
         </p>
-    )
+    ) 
 }

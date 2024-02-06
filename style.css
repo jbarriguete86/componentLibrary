@@ -342,13 +342,17 @@ button.button-danger {
 
 .testimonial-container{
     flex-direction: column;
-    margin: 1em;
+    margin: 1em 1em 20px;
     width: 100%;
     padding: 0 16px;
     max-width: 376px;
-    max-height: 552px;
+    max-height: 800px;
     background: white;
     position: relative; 
+}
+
+.testimonial-container.container-picture{
+    padding: 103px 0 0;
 }
 
 .testimonial-inner{
@@ -360,6 +364,12 @@ button.button-danger {
     color: #111827;
 }
 
+.testimonial-inner.testimonial-picture{
+    background-color: #2545B8;
+    padding: 124px 16px 0;
+    color: #FFFFFF;
+}
+
 .testimonialImage{
     margin-top: 74px;
     width: 180px;
@@ -368,12 +378,16 @@ button.button-danger {
 }
 
 .testimonialImage.image-picture{
-    width: 100%;;
+    margin: 0;
+    width: 95%;
     height: 206px;
     position: absolute;
-    /* margin: auto; */
-    
-    
+    object-fit: cover;
+    object-position: center 30%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px;
 }
 
 .testimonialLogo-bckg{
@@ -390,9 +404,27 @@ button.button-danger {
 .testimonialText{
     text-align:left;
     margin: 40px 0 32px;
-   
+    font-weight: 500;
+    color: #111827;
+    font-size: 1.5rem;
 }
 
+.testimonialText.text-picture{
+    color: #FFFFFF;
+    line-height: 32px;
+}
+
+.testimonialText span{
+    font-size: .5rem;
+    vertical-align: top;
+}
+
+.text-picture span{
+    display: block;
+    margin-bottom: 30px;
+    opacity: 25%;
+    font-size: 3.4rem;
+}
 
 .testimonialFooter{
     display: flex;
@@ -402,6 +434,10 @@ button.button-danger {
     z-index: 1;
 }
 
+.testimonialFooter span{
+    display: none;
+}
+
 .testimonialPosition,
 .testimonialName{
     font-size: 1rem;
@@ -409,6 +445,173 @@ button.button-danger {
 
 .testimonialPosition{
     color: #6B7280;
+}
+
+.testimonialPosition.position-picture{
+    line-height: 24px;;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 1024px) {
+    .testimonial-container{
+        padding: 0 39px;
+        max-width: 1358px;
+        max-height: 444px;
+    }
+    
+    .testimonial-container.container-picture{
+        padding: 50px 0;
+       flex-direction: row;
+       background-color: transparent;
+    }
+    
+    .testimonial-inner{
+        display: flex;
+        flex-direction: column;
+        padding: 0 224px;
+        align-items: center;
+    }
+    
+    .testimonial-inner.testimonial-picture{
+        height: 90%;
+        padding: 0 81px 0 487px;
+    }
+    
+    .testimonialImage{
+        margin-top: 96px;
+    }
+    
+    .testimonialImage.image-picture{
+        width:30%;
+        height: 450px;
+        left: 1%;
+        transform: translateX(10%);
+
+    }
+    
+    .testimonialLogo-bckg{
+        right: 0;
+        width: 241px;
+        height: 270px;
+        opacity: 100%;
+        filter: brightness(95%);
+    }
+    
+    
+    .testimonialFooter{
+        flex-direction: row;
+        align-items: center; 
+    }
+
+    .testimonialFooter.footer-picture{
+        flex-direction: column;
+        align-self: flex-start;
+    }
+
+    .testimonialFooter span{
+        display: inline-block;
+        color: #2E59F3;
+        font-size: 1.4rem;
+        margin: 0 9px;
+        font-weight: bolder;
+    }
+    
+}
+
+
+/* TOOLTIP COMPONENT */
+.tooltip-container {
+    width: 100%;
+    margin: 100px;
+    display: grid;
+    grid-template: repeat(2, 1fr) /  repeat(3, 1fr);
+    grid-template-areas: 
+    "tooltip tooltip tooltip"
+    "element element element";
+    
+
+}
+
+.tooltip{
+    grid-area: tooltip;
+
+}
+
+.tooltip-trigger{
+    grid-area: element;
+    justify-self: flex-end ;
+    margin-right: 100px;
+}
+
+.tooltip-content,
+.tooltip-text-container{
+    display: flex;
+}
+
+.tooltip-content{
+    background-color: black;
+    min-height: 98px;
+    width: 100%;
+    max-width: 384px;
+    border-radius: 8px;
+    padding-top: 12px;
+    color: #C7C7C7;
+    font-size: .875rem;
+    font-weight: 400;
+
+}
+
+.tooltip-icon{
+    margin-left: 16px;
+    font-size: 1.8rem;
+}
+
+.tooltip-text-container{
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left:12px;
+
+}
+
+.tooltip-title,
+.tooltip-text{
+    margin: 0;
+    padding: 0;
+}
+
+
+.tooltip-title{
+    color: #FFFFFF;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.tooltip-close{
+    margin: 4px 16px  16px 0;
+    border: 0;
+    text-align: start;
+    color: #C7C7C7;
+    font-size: 1rem;
+}
+
+
+
+.tooltip-bottom-container{
+    width: 5%;
+    margin-left: 12%;
+    border: 20px solid #000;
+    border-color: black transparent transparent transparent;
+    transform: rotateX(345);
+    
+}
+
+@media screen and (min-width:768px) {
+    .tooltip-container {
+        grid-template-areas: 
+        ". tooltip tooltip"
+        "element element .";
+    }
 }
 
 
