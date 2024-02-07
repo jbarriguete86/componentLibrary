@@ -9,6 +9,8 @@ import BannerExample from "./components/BannerExample"
 import CardExample from "./components/CardExample"
 import TestimonialExample from "./components/TestimonialExample"
 import TooltipExample from './components/TooltipExample'
+
+
 function App() {
   return (
     <div className="component-cont">
