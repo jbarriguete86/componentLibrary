@@ -195,12 +195,12 @@ button.button-danger {
 }
 
 .green{
-    background-color:var(--bckg-green);
+    background-color:var(--bckg-lightgreen);
     color: var(--font-green);
 }
 
 .blue{
-    background-color:var(--bckg-blue);
+    background-color:var(--bckg-lightblue);
     color: var(--font-blue);
 }
 
@@ -523,12 +523,12 @@ button.button-danger {
 /* TOOLTIP COMPONENT */
 .tooltip-container {
     width: 100%;
-    margin: 100px;
+    margin: 0 100px 100px;
     display: grid;
     grid-template: repeat(2, 1fr) /  repeat(3, 1fr);
     grid-template-areas: 
     "tooltip tooltip tooltip"
-    "element element element";
+    "element element .";
     
 
 }
@@ -540,7 +540,6 @@ button.button-danger {
 
 .tooltip-trigger{
     grid-area: element;
-    justify-self: flex-end ;
     margin-right: 100px;
 }
 
@@ -569,13 +568,13 @@ button.button-danger {
 
 .tooltip-text-container{
     flex-direction: column;
-    margin-top: 5px;
-    margin-left:12px;
+    margin: 5px 0 18px 12px;
 
 }
 
 .tooltip-title,
 .tooltip-text{
+    text-align: left;
     margin: 0;
     padding: 0;
 }
@@ -606,13 +605,173 @@ button.button-danger {
     
 }
 
+
+/*TOOLTIP DEFAULT STYLE AND TYPE */
+
+.tooltip-bottom-container.light{
+    background-color:transparent;
+    border-color: #FFFFFF transparent transparent transparent;
+}
+
+.light{
+    background-color:#FFFFFF;
+}
+
+.tooltip-text.light,
+.light .tooltip-icon,
+.light .tooltip-close{
+    color: #6B7280;
+}
+
+.tooltip-title.light{
+    color: #111827;
+}
+
+.bold.green .tooltip-close,
+.bold.blue .tooltip-close,
+.bold.purple .tooltip-close{
+   color: #D8D8D8;
+}
+
+/*TOOLTIP GREEN STYLE AND TYPE */
+
+.tooltip-bottom-container.bold.green{
+    background-color:transparent;
+    border-color: var(--bckg-green) transparent transparent transparent;
+}
+
+
+.bold.green{
+    background-color: var(--bckg-green);
+}
+
+.tooltip-text.bold.green{
+    color: #E3FFE9;
+}
+
+.bold.green .tooltip-icon{
+   color: #C1FFCF; 
+}
+
+/*TOOLTIP LIGHT GREEN STYLE AND TYPE */
+.tooltip-bottom-container.light.green{
+    background-color:transparent;
+    border-color: var(--bckg-lightgreen) transparent transparent transparent;
+}
+
+.light.green{
+    background-color:var(--bckg-lightgreen);
+}
+
+.tooltip-text.light.green,
+.light.green .tooltip-close{
+    color: #3C8C4E;
+}
+
+.tooltip-title.light.green{
+    color: #137A2A;
+}
+
+.light.green .tooltip-icon{
+    color: #41A557;
+}
+
+/*TOOLTIP PURPLE/MAGENTA STYLE AND TYPE */
+.tooltip-bottom-container.bold.purple{
+    background-color:transparent;
+    border-color: #A9229B transparent transparent transparent;
+}
+
+.bold.purple{
+    background-color: #A9229B;
+}
+
+.tooltip-text.bold.purple{
+    color: #FFE9FD;
+}
+
+.bold.purple .tooltip-icon{
+   color: #F462E6; 
+}
+/*TOOLTIP LIGHT PURPLE/MAGENTA STYLE AND TYPE */
+
+.tooltip-bottom-container.light.purple{
+    background-color:transparent;
+    border-color: var(--bckg-lightmagenta) transparent transparent transparent;
+}
+
+.light.purple{
+    background-color:var(--bckg-lightmagenta);
+}
+
+.tooltip-text.light.purple,
+.light.purple .tooltip-icon,
+.light-purple .tooltip-close{
+    color: #C7369E;
+}
+
+.tooltip-title.light.purple{
+    color: #A9229B;
+}
+
+/*TOOLTIP BLUE STYLE AND TYPE */
+.tooltip-bottom-container.bold.blue{
+    background-color:transparent;
+    border-color: var(--bckg-blue) transparent transparent transparent;
+}
+
+
+.bold.blue{
+    background-color: var(--bckg-blue);
+}
+
+.tooltip-text.bold.blue{
+    color: #E3FFE9;
+}
+
+.bold.blue .tooltip-icon{
+   color: #7EA6F2; 
+}
+
+/*TOOLTIP LIGHT BLUE STYLE AND TYPE */
+.tooltip-bottom-container.light.blue{
+    background-color:transparent;
+    border-color: var(--bckg-lightblue) transparent transparent transparent;
+}
+
+
+.light.blue{
+    background-color:var(--bckg-lightblue);
+}
+
+.tooltip-text.light.blue,
+.light.blue .tooltip-close,
+.light.blue .tooltip-icon{
+    color: #1C51B9;
+}
+
+.tooltip-title.light.blue{
+    color: #1E40AF;
+}
+
+/*TOOLTIP DESKTOP VIEW */
+
 @media screen and (min-width:768px) {
     .tooltip-container {
         grid-template-areas: 
         ". tooltip tooltip"
-        "element element .";
+        "element element element";
+    }
+
+    .tooltip{
+        margin-left: 100px;
+    }
+
+    .tooltip-trigger{
+        justify-self: center ;
     }
 }
+
 
 
 /*  */
@@ -621,4 +780,11 @@ button.button-danger {
  background-color: transparent;
  padding: 0;
  border:none;
+}
+
+.tooltipBtn{
+    background-color: transparent;
+    padding: 0;
+    border:none;
+    grid-area: tooltip;
 }
